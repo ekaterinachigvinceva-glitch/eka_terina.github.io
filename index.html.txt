@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВетКлиника "Доктор Айболит"</title>
+    <!-- Подключаем файл со стилями -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем шрифты Google Fonts для красивого оформления -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка сайта (Навигация) -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <!-- Логотип -->
+                <div class="logo">
+                    <i class="fas fa-paw"></i>
+                    <span>Доктор Айболит</span>
+                </div>
+                <!-- Меню навигации -->
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Главная</a></li>
+                    <li><a href="#about" class="nav-link">О нас</a></li>
+                    <li><a href="#services" class="nav-link">Услуги</a></li>
+                    <li><a href="#doctors" class="nav-link">Врачи</a></li>
+                    <li><a href="#contact" class="nav-link">Контакты</a></li>
+                </ul>
+                <!-- Кнопка для мобильной версии -->
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный экран (Hero) -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Забота о здоровье ваших питомцев — наша главная цель</h1>
+                <p>Современная ветеринарная клиника с опытными врачами и новейшим оборудованием. Любовь и забота — бесплатно.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Наши услуги</a>
+                    <a href="#contact" class="btn btn-secondary">Записаться на приём</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок "О нас" -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header">
+                <h2>О нашей клинике</h2>
+                <p>Узнайте, почему нам доверяют более 5000 счастливых владельцев</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Ветеринарная клиника "Доктор Айболит" работает на рынке уже более 10 лет. Мы предоставляем полный спектр услуг по лечению и уходу за домашними животными.</p>
+                    <p>Наша гордость — высококвалифицированные специалисты, новейшее диагностическое оборудование и, конечно, любовь к каждому пациенту. Мы знаем, что ваш питомец — это член семьи, поэтому относимся к его здоровью с максимальной ответственностью.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>Современное оборудование</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-user-md"></i>
+                            <span>Опытные врачи</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Круглосуточная помощь</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Врач с собакой">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок "Услуги" -->
+    <section id="services" class="services section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши услуги</h2>
+                <p>Мы предлагаем полный спектр ветеринарных услуг</p>
+            </div>
+            <div class="services-grid" id="services-container">
+                <!-- Здесь JavaScript динамически добавит карточки услуг -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок "Наши врачи" -->
+    <section id="doctors" class="doctors section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши специалисты</h2>
+                <p>Опытные врачи, которые любят свою работу</p>
+            </div>
+            <div class="doctors-grid" id="doctors-container">
+                <!-- Здесь JavaScript динамически добавит карточки врачей -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок "Контакты" -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Как нас найти</h2>
+                <p>Мы всегда рады видеть вас и ваших питомцев</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Адрес:</h4>
+                            <p>г. Москва, ул. Ветеринарная, д. 10</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Телефон:</h4>
+                            <p>+7 (495) 123-45-67</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email:</h4>
+                            <p>info@vetclinic.ru</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Режим работы:</h4>
+                            <p>Ежедневно: 09:00 - 21:00</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="appointmentForm">
+                    <h3>Записаться на приём</h3>
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Ваш телефон" required>
+                    <input type="email" placeholder="Ваш email">
+                    <textarea rows="4" placeholder="Сообщение или имя питомца"></textarea>
+                    <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                    <p id="formMessage" class="form-message"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ВетКлиника "Доктор Айболит". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Подключаем файл со скриптами -->
+    <script src="script.js"></script>
+</body>
+</html>

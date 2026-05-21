@@ -1,0 +1,121 @@
+// Данные об услугах (можно легко менять или добавлять)
+const servicesData = [
+    { name: "Общий осмотр", description: "Полный клинический осмотр питомца с консультацией врача.", price: "от 1000 ₽", icon: "fa-heartbeat" },
+    { name: "Вакцинация", description: "Защитите питомца от опасных заболеваний.", price: "от 1500 ₽", icon: "fa-syringe" },
+    { name: "Хирургия", description: "Профессиональные хирургические операции любой сложности.", price: "от 5000 ₽", icon: "fa-hospital-user" },
+    { name: "УЗИ", description: "Современная диагностика всех органов.", price: "от 2000 ₽", icon: "fa-microscope" },
+    { name: "Стоматология", description: "Лечение зубов и полости рта.", price: "от 2500 ₽", icon: "fa-tooth" },
+    { name: "Анализы", description: "Быстрые и точные лабораторные исследования.", price: "от 500 ₽", icon: "fa-flask" }
+];
+
+// Данные о врачах
+const doctorsData = [
+    { name: "Иванова Анна Петровна", specialty: "Терапевт", experience: "Стаж 12 лет", icon: "fa-user-md" },
+    { name: "Смирнов Олег Иванович", specialty: "Хирург", experience: "Стаж 8 лет", icon: "fa-user-md" },
+    { name: "Кузнецова Елена Сергеевна", specialty: "Дерматолог", experience: "Стаж 6 лет", icon: "fa-user-md" },
+    { name: "Попов Андрей Викторович", specialty: "Ортопед", experience: "Стаж 5 лет", icon: "fa-user-md" }
+];
+
+// Функция для отображения услуг
+function displayServices() {
+    const container = document.getElementById('services-container');
+    if (!container) return;
+    
+    servicesData.forEach(service => {
+        const card = document.createElement('div');
+        card.className = 'service-card';
+        card.innerHTML = `
+            <div class="service-icon"><i class="fas ${service.icon}"></i></div>
+            <h3>${service.name}</h3>
+            <p>${service.description}</p>
+            <div class="service-price">${service.price}</div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// Функция для отображения врачей
+function displayDoctors() {
+    const container = document.getElementById('doctors-container');
+    if (!container) return;
+    
+    doctorsData.forEach(doctor => {
+        const card = document.createElement('div');
+        card.className = 'doctor-card';
+        card.innerHTML = `
+            <div class="doctor-icon"><i class="fas ${doctor.icon}"></i></div>
+            <h3>${doctor.name}</h3>
+            <div class="specialty">${doctor.specialty}</div>
+            <p>${doctor.experience}</p>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// Функция для обработки отправки формы
+function handleFormSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formMessage = document.getElementById('formMessage');
+    
+    // Собираем данные из формы
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const phone = formData.get('phone');
+    
+    if (name && phone) {
+        formMessage.textContent = `Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`;
+        formMessage.style.color = '#28a745';
+        form.reset();
+    } else {
+        formMessage.textContent = 'Пожалуйста, заполните все обязательные поля.';
+        formMessage.style.color = '#dc3545';
+    }
+}
+
+// Функция для бургер-меню (мобильная навигация)
+function initBurgerMenu() {
+    const burger = document.querySelector('.burger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (burger && navMenu) {
+        burger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+    }
+}
+
+// Функция для плавной прокрутки к якорям
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Закрываем мобильное меню после клика
+                const navMenu = document.querySelector('.nav-menu');
+                if (navMenu && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            }
+        });
+    });
+}
+
+// Инициализация всех функций после полной загрузки страницы
+document.addEventListener('DOMContentLoaded', () => {
+    displayServices();
+    displayDoctors();
+    initBurgerMenu();
+    initSmoothScroll();
+    
+    const form = document.getElementById('appointmentForm');
+    if (form) {
+        form.addEventListener('submit', handleFormSubmit);
+    }
+});
